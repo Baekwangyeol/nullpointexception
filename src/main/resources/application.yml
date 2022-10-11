@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  mustache:
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      expose-request-attributes: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/securitycheck?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: asdf1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #변수 그대로 사용
+    properties:
+      hibernate:
+        format_sql: true
+
+
+logging.level:
+  org.hibernate.SQL: debug
+
+
+
+
+
